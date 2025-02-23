@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reva University - Admin Dashboard</title>
+    <style>
+        /* Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a73e8, #6dd5ed);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 3px solid #0047ab;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-image {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0047ab;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        .button-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .button-group {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button-group:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-image {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px 35px;
+            background: #0047ab;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #1a73e8;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            background: rgba(0, 71, 171, 0.9);
+            color: #fff;
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+        .greeting-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .greeting-container h1 {
+            font-size: 2.5rem;
+            color: #fbfcfd;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="greeting-container">
+        <h1>{{ greeting }}</h1>
+    </div>
+    <header>
+        <div class="header-content">
+            <img src="static/image/download.jpg" alt="Logo" class="header-image">
+            <h1>Face Recognition Attendance System</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="button-section">
+            <div class="button-group">
+                <img src="static/image/images.jpg" alt="Student Detail" class="button-image">
+                <a href="{{ url_for('student_detail') }}"><button>Student Detail</button></a>
+            </div>
+
+            <div class="button-group">
+                <img src="static/image/uk.jpg" alt="Complain" class="button-image">
+                <a href="{{ url_for('complain') }}"><button>Complain</button></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Reva University. All rights reserved.</p>
+    </footer>
+</body>
+</html>

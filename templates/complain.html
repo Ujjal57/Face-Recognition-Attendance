@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reva University</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0047ab;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .complaint {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .complaint-header {
+            font-weight: bold;
+            color: #0047ab;
+        }
+        form {
+            display: inline;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        footer {
+            background-color: #0047ab;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showDeletedMessage() {
+            alert("Complaint deleted successfully.");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Complaints</h1>
+    </header>
+    <div class="content">
+        {% if complaints %}
+            {% for complaint in complaints %}
+                <div class="complaint">
+                    <p class="complaint-header">Complaint ID: {{ complaint.id }}</p>
+                    <p><strong>Name:</strong> {{ complaint.name }}</p>
+                    <p><strong>Email:</strong> {{ complaint.email }}</p>
+                    <p><strong>Message:</strong> {{ complaint.message }}</p>
+                    <p><strong>Submitted On:</strong> {{ complaint.timestamp }}</p>
+                    <form action="/delete_complain/{{ complaint.id }}" method="post" onsubmit="showDeletedMessage()">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No complaints yet.</p>
+        {% endif %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Reva University. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reva University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a73e8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fcfdfd;
+            color: #0047ab;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(208, 219, 219);
+            border-radius: px;
+            box-shadow: 0 px px rgba(0, 0, 0, 0.1);
+            font-family: 'Times New Roman', serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: 'Times New Roman', serif;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: px;
+            font-family: 'Times New Roman', serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0047ab;
+            color: white;
+            border: none;
+            border-radius: px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003580;
+        }
+        footer {
+            background-color: #0047ab;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conatct Us</h1>
+    </header>
+    <div class="content">
+        <form action="/submit_complain" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="complain">Message:</label>
+            <textarea id="complain" name="complain" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Reva University. All rights reserved.</p>
+    </footer>
+</body>
+</html>
